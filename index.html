@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azhar Porfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/particles.js@2.0.0/particles.js"></script>
+    <style>
+        @keyframes gradientGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glowing-border {
+            animation: gradientGlow 4s ease infinite;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+        }
+        .slide {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body class="dark:bg-gray-900 transition-colors duration-500">
+    <!-- Animated Particles Background -->
+    <div id="particles-js" class="fixed inset-0 -z-10 opacity-20"></div>
+
+    <!-- Floating Theme Toggle -->
+    <button id="themeToggle" class="fixed top-4 right-4 p-3 rounded-full bg-white dark:bg-gray-800 shadow-xl hover:rotate-180 transition-transform">
+        🌓
+    </button>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4">
+        <div class="text-center max-w-4xl">
+            <!-- Profile Picture with Glowing Border -->
+            <div class="relative mx-auto w-64 h-64 mb-12 rounded-full p-1 glowing-border">
+                <img src="azhar.jpeg" 
+                     class="w-full h-full rounded-full border-4 border-white dark:border-gray-900 object-cover hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-full border-4 border-transparent animate-pulse"></div>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Hi, I'm Muhammad Azhar Zia
+            </h1>
+            
+            <!-- Animated Tagline -->
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                <span class="typing-animation"><b style="font-size: 40px;">Full Stack Developer</b></span> 
+                <span class="animate-bounce"></span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills & Experience Slideshow -->
+    <section class="py-20 px-4 bg-white dark:bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-600 dark:text-gray-300">Skills & Experience</h2>
+            
+            <!-- Slideshow Container -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Slides -->
+                <div class="slideshow">
+                    <!-- Slide 1: Skills -->
+                    <div class="slide active p-8 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Technical Skills</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                            <div class="p-4 bg-white dark:bg-gray-900 rounded-lg hover:transform hover:translate-y-2 transition-all">
+                                <h4 class="font-bold text-purple-500">Frontend</h4>
+                                <p class="text-gray-600 dark:text-gray-300">React, Vue, Tailwind</p>
+                            </div>
+                            <div class="p-4 bg-white dark:bg-gray-900 rounded-lg hover:transform hover:translate-y-2 transition-all">
+                                <h4 class="font-bold text-pink-500">Backend</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Node.js, Django, Flask</p>
+                            </div>
+                            <div class="p-4 bg-white dark:bg-gray-900 rounded-lg hover:transform hover:translate-y-2 transition-all">
+                                <h4 class="font-bold text-blue-500">DevOps</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Docker, Kubernetes, AWS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Experience -->
+                    <div class="slide p-8 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Experience</h3>
+                        <div class="space-y-6">
+                            <div class="p-4 bg-white dark:bg-gray-900 rounded-lg hover:transform hover:translate-y-2 transition-all">
+                                <h4 class="font-bold text-purple-500">Senior Developer</h4>
+                                <p class="text-gray-600 dark:text-gray-300">2020-Present</p>
+                                <p class="text-gray-600 dark:text-gray-300">Led a team of 10 developers...</p>
+                            </div>
+                            <div class="p-4 bg-white dark:bg-gray-900 rounded-lg hover:transform hover:translate-y-2 transition-all">
+                                <h4 class="font-bold text-pink-500">Frontend Lead</h4>
+                                <p class="text-gray-600 dark:text-gray-300">2018-2020</p>
+                                <p class="text-gray-600 dark:text-gray-300">Designed and implemented...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more slides as needed -->
+                </div>
+
+                <!-- Slideshow Controls -->
+                <button id="prevSlide" class="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-white dark:bg-gray-900 rounded-full shadow-lg hover:bg-purple-500 hover:text-white transition-colors">
+                    ◀️
+                </button>
+                <button id="nextSlide" class="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-white dark:bg-gray-900 rounded-full shadow-lg hover:bg-purple-500 hover:text-white transition-colors">
+                    ▶️ 
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DeepSeek Signature -->
+    <div class="text-center py-8 text-gray-500">
+        Crafted with ❤️ by <span class="text-purple-500">DeepSeek AI</span>
+    </div>
+
+    <script>
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#6366f1' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { speed: 2 }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            // Apply saved theme on page load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        });
+
+        // Slideshow Logic
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Auto-advance slideshow (optional)
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 50000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
